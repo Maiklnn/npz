@@ -1,0 +1,18 @@
+- var class_name = 'steps'
+section(class=`${class_name} `)
+	div(class=`container`)
+		h2.title__decor Этары работ
+
+		div(class=`${class_name}__list`)
+			mixin item(name, icon)
+				label(class=`item`)
+					div(class=`item__icon`): img(src=`assets/img/icon/step/${icon}` alt=`#`)
+					div(class=`item__name`)= name
+
+			+item('Получаем заявку <br> и чертежи', '1.jpg')
+			+item('Согласовываем <br> технические вопросы', '2.jpg')
+			+item('Производим расчет <br> и выставляем коммерческое <br>предложение', '3.jpg')
+			+item('Оплата продукции', '4.jpg')
+			+item('Производим<br> опытную партию', '5.jpg')
+			+item('Изготавливаем<br> продукцию', '6.jpg')
+			+item('Отгрузка готовых <br> деталей', '7.jpg')

@@ -1,0 +1,14 @@
+.slider-logo {
+	.swiper-container {
+		margin: 60px 0;
+	}
+	&-slide {
+		display: flex;
+		justify-content: center;
+		&__img-box {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}

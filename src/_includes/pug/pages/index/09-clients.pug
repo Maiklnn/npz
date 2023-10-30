@@ -1,0 +1,23 @@
+- var class_slider = 'slider-clients'
+section(class=`${class_slider}`)
+	h2(class='title__decor') Наши клиенты
+
+	div(class=`${class_slider}__inner`)
+
+		button(class='swiper-button-prev')
+
+		div(class=`${class_slider}__swiper swiper-container`)
+
+			.swiper-wrapper
+				mixin item(img, title, descr)
+					a(class=`swiper-slide` href = '#')
+						// div(class=`${class_slider}-slide__title`)= title
+						// img(src=`https://gugos.ru/custom/my/assets/img/info/serv/2.jpg` alt=`#`)
+
+				+item('1.jpg', '1')
+				+item('1.jpg', '2')
+				+item('1.jpg', '3')
+				+item('1.jpg', '4')
+				+item('1.jpg', '5')
+
+		button(class='swiper-button-next')

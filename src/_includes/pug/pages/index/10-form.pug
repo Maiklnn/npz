@@ -1,0 +1,29 @@
+- var class_name = 'form'
+section(class=`${class_name} `)
+	div(class=`container`)
+		h2.title__decor Изготовим типовые и нестандартные изделия из гнутой проволоки
+		div(class=`${class_name}__inner`)
+
+			div(class=`${class_name}-left`)
+				img(src=`assets/img/content/form/1.jpg` alt=`#`)
+				img(src=`assets/img/content/form/2.jpg` alt=`#`)
+				img(src=`assets/img/content/form/3.jpg` alt=`#`)
+				img(src=`assets/img/content/form/4.jpg` alt=`#`)
+
+			div(class=`${class_name}-right`)
+				- var class_name = 'form-order'
+				form(class=`${class_name}`)
+					h2 Заказать нестандартное изделие
+					p(class=`${class_name}__subtitle`) Оставьте ваши контакты и мы перезвоним вам в ближайшее время
+
+					.placeholder-container
+						input(type="text" name="#" placeholder= ' ' required)
+						div(class='caption') Ваше имя
+
+					.placeholder-container
+						input(type="text" name="#" data-mask="tel" placeholder= ' ' required)
+						div(class='caption')  Ваш телефон
+
+					button(class='btn' data-form = 'true') Отправить
+
+		a(class=`btn btn__large` href='/') Подробнее об изделиях из гнутой проволоки

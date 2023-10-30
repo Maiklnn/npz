@@ -1,0 +1,36 @@
+.radio {
+	position: relative;
+	padding: 4px 0;
+
+	// скрываем radio input по default
+	&__input {
+		-webkit-appearance: none;
+		appearance: none;
+		position: absolute;
+	}
+
+	// создаём свою радио кнопку
+	&__label {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		&::before {
+			width: 23px;
+			height: 23px;
+			border: 1px solid #CFCFCF;
+			content: '';
+			margin-right: 10px;
+			transition: all .3s;
+			border-radius: 50%;
+		}
+	}
+
+
+
+	// при checked
+	&__input:checked + &__label:before {
+		background-color: $accent;
+	}
+
+
+}

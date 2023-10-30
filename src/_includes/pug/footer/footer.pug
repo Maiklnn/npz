@@ -1,0 +1,59 @@
+
+- var class_name = 'footer'
+footer(class=`${class_name}`)
+
+	div(class=`${class_name}__row container`)
+
+		//- left
+		div(class=`${class_name}__row-left`)
+			a(class=`logo` href='/'): img(src='assets/img/footer-logo.png' alt=`#`)
+			div(class=`${class_name}-left__address`) Нижний Новгород,ул. <br> Юлиуса Фучика д. 6а
+			a(class=`${class_name}-left__raiting` href='/'): img(src='assets/img/content/raiting.jpg' alt=`#`)
+
+
+
+		//- nav
+		nav
+			h2 Каталог
+			ul
+				mixin item(name,href,active)
+					li: a(href=`${href}`)= name
+
+				+item('Пружины сжатия','/')
+				+item('Пружины растяжения','/')
+				+item('Пружины кручения', '/')
+				+item('Мебельные пружины', '/')
+				+item('Пружины квадратного и п/у сечения', '/')
+				+item('Пружины типа zig zag', '/')
+				+item('Нестандартные пружины', '/')
+				+item('Автомобильные пружины', '/')
+
+		//- nav
+		nav
+			h2 Навигация:
+			ul
+				mixin item(name,href,active)
+					li: a(href=`${href}`)= name
+				+item('Главная','/')
+				+item('Каталог','/')
+				+item('О компании', '/')
+				+item('Обордование', '/')
+				+item('Этапы работ', '/')
+				+item('Изделия из гнутой проволоки', '/')
+
+
+		//- right
+		div(class=`${class_name}__row-right`)
+			a(class=`phone` href='tel:+74952555549') +7 (831) 200-47-79
+			a(class=`mail` href='mailto:sales@npznn.ru') sales@npznn.ru
+			a(class=`btn` href = '') Заказать звонок
+
+
+			div(class=`sohial`)
+				a(class=`sohial__tw` href='mailto:info@ballmarket.ru')
+				a(class=`sohial__whatsap` href='mailto:info@ballmarket.ru')
+				a(class=`sohial__viber` href='mailto:info@ballmarket.ru')
+
+
+
+

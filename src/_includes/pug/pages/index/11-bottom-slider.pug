@@ -1,0 +1,18 @@
+- var class_slider = 'slider-cat'
+section(class=`${class_slider}`)
+	div(class=`${class_slider}__inner`)
+
+		div(class=`${class_slider}__swiper swiper-container`)
+
+			.swiper-wrapper
+				mixin item(img, title, descr)
+					a(class=`swiper-slide` href = '#')
+						img(src=`assets/img/content/slider-cat/${img}` alt=`#`)
+
+				+item('1.jpg', '1')
+				+item('2.jpg', '2')
+				+item('3.jpg', '3')
+				+item('4.jpg', '4')
+				+item('5.jpg', '5')
+				+item('6.jpg', '5')
+

@@ -1,0 +1,10 @@
+- var item_good = 'item-springs'
+mixin goods(list)
+	each item in list
+		div(class=`${item_good}`)
+			div(class=`${item_good}__img-box`): // img(src=`assets/img/content/section3/${item.img}` alt=`#`)
+			div(class=`${item_good}__name`)= item.name
+
+
+
+

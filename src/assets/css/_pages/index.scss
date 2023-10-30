@@ -1,0 +1,393 @@
+@import "../_parts/sliders/swiper.min";
+
+.page-home {
+
+	.offer {
+		background: url("../img/page-home/offer-bg.jpg") center center/cover no-repeat;
+		padding-top: 124px;
+		padding-bottom: 75px;
+		margin-bottom: 120px;
+		color: #fff;
+
+		h1 {
+			margin-bottom: 75px;
+
+			max-width: 684px;
+		}
+
+		&__list {
+			display: inline-flex;
+			gap: 42px;
+			margin-bottom: 70px;
+			.item {
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				max-width: 330px;
+
+
+				&__icon {
+					min-width: 60px;
+					height: 60px;
+				}
+
+				&__name {
+					font-weight: 400;
+					font-size: 20px;
+				}
+			}
+		}
+
+		&__btns {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			margin-bottom: 56px;
+
+			.btn {
+				min-width: 260px;
+
+				&:nth-child(2) {
+					background: #fff;
+					color: $accent2;
+				}
+
+
+			}
+
+
+		}
+
+
+
+		@media(max-width: 750px) {
+			&__list {
+				flex-wrap: wrap;
+				.item {
+					max-width: 100%;
+					width: 100%;
+				}
+			}
+		}
+
+	}
+
+	.springs {
+		margin-bottom: 108px;
+
+
+		&__list {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			column-gap: 16px;
+			row-gap: 49px;
+			@import "../_parts/cards/item-shipings";
+		}
+
+
+
+		@media(max-width: 1220px) {
+			//&__list-goods {
+			//	grid-template-columns: 1fr 1fr;
+			//}
+		}
+
+		@media(max-width: 600px) {
+			&__list-goods {
+				grid-template-columns: 1fr;
+			}
+		}
+
+
+
+	}
+
+	.on-springs {
+		margin-bottom: 108px;
+
+		&__list {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			column-gap: 16px;
+			row-gap: 49px;
+			@import "../_parts/cards/item-on-shipings";
+		}
+
+
+
+		@media(max-width: 1220px) {
+			//&__list-goods {
+			//	grid-template-columns: 1fr 1fr;
+			//}
+		}
+
+		@media(max-width: 600px) {
+			&__list-goods {
+				grid-template-columns: 1fr;
+			}
+		}
+
+
+
+	}
+
+	.coast-popup {
+		padding: 80px 0;
+		@include gradient(90);
+		text-align: center;
+		color: #fff;
+		margin-bottom: 120px;
+		h2 {
+			font-size: 40px;
+			margin-bottom: 38px;
+		}
+
+		p {
+			margin-bottom: 65px;
+			font-size: 18px;
+			font-weight: 400;
+		}
+
+		.btn {
+			background: #fff;
+			color: $accent;
+			padding: 25px 64px;
+
+		}
+	}
+
+	.about {
+		margin-bottom: 120px;
+		font-size: 22px;
+		font-weight: 400;
+
+
+		&__inner {
+			display: flex;
+			justify-content: space-between;
+			gap: 5px;
+		}
+
+		&__left {
+			max-width: 562px;
+			p {
+				margin-bottom: 105px;
+			}
+			.btn {
+				min-width: 280px;
+			}
+
+
+		}
+
+		&__right {
+
+		}
+	}
+
+
+	.equipment {
+		margin-bottom: 120px;
+
+
+		&__list {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+			@import "../_parts/cards/item-equipment";
+		}
+
+
+
+		@media(max-width: 1220px) {
+			//&__list-goods {
+			//	grid-template-columns: 1fr 1fr;
+			//}
+		}
+
+		@media(max-width: 600px) {
+			&__list-goods {
+				grid-template-columns: 1fr;
+			}
+		}
+
+
+
+	}
+
+	.steps {
+		margin-bottom: 120px;
+		&__list {
+			position: relative;
+			height: 567px;
+			max-width: 1080px;
+			.item {
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				&__name {
+					margin-top: 32px;
+					text-align: center;
+					font-size: 18px;
+
+				}
+				// Получаем
+				&:nth-child(1) {
+					top: 66px;
+					left: 0;
+					&::before {
+					    position: absolute;
+					    top: -66px;
+						left: 120px;
+						width: 231px;
+						height: 68px;
+						background: url("../img/icon/step/arr1.svg") no-repeat;
+						content: '';
+					}
+				}
+
+				// Согласовываем
+				&:nth-child(2) {
+					top: 66px;
+					left: 300px;
+					&::before {
+						position: absolute;
+						top: 82px;
+						left: 130px;
+						width: 212px;
+						height: 53px;
+						background: url("../img/icon/step/arr2.svg") no-repeat;
+						content: '';
+					}
+				}
+				// Производим расчёт
+				&:nth-child(3) {
+					top: 66px;
+					left: 580px;
+					&::before {
+						position: absolute;
+						top: -66px;
+						left: 140px;
+						width: 231px;
+						height: 68px;
+						background: url("../img/icon/step/arr3.svg") no-repeat;
+						content: '';
+					}
+				}
+				// Оплата продукции
+				&:nth-child(4) {
+					top: 66px;
+					right: 0;
+					&::before {
+						position: absolute;
+						bottom: -210px;
+						right: 0;
+						width: 124px;
+						height: 203px;
+						background: url("../img/icon/step/arr4.svg") no-repeat;
+						content: '';
+					}
+				}
+				// Производим
+				&:nth-child(5) {
+					bottom: 0;
+					right: 135px;
+					&::before {
+						position: absolute;
+						top: -30px;
+						right: 140px;
+						width: 268px;
+						height: 58px;
+						background: url("../img/icon/step/arr5.svg") no-repeat;
+						content: '';
+					}
+				}
+
+				// Изготавливаем
+				&:nth-child(6) {
+					bottom: 0;
+					right: 535px;
+					&::before {
+						position: absolute;
+						top: 60px;
+						right: 150px;
+						width: 234px;
+						height: 65px;
+						background: url("../img/icon/step/arr6.svg") no-repeat;
+						content: '';
+					}
+				}
+
+				// Изготавливаем
+				&:nth-child(7) {
+					bottom: 0;
+					left: 0;
+				}
+			}
+
+		}
+	}
+
+	@import "../_parts/sliders/slider-clients";
+
+	.form {
+		margin-bottom: 120px;
+		padding: 40px 0 80px;
+		background: linear-gradient(180deg, rgba(2, 171, 138, 0.20) 0%, rgba(26, 107, 163, 0.20) 100%);
+		text-align: center;
+		&__inner {
+			display: flex;
+			margin-bottom: 50px;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 10px;
+		}
+		&-left {
+			max-width: 580px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			img {
+				border: 1px solid #1A6BA3;
+				max-width: 280px;
+			}
+		}
+
+		&-right {
+			.form-order {
+				padding-top: 32px;
+				max-width: 437px;
+				h2 {
+					margin-bottom: 40px;
+					font-size: 25px;
+					font-weight: 600;
+				}
+				p {
+					margin-bottom: 60px;
+					line-height: 135.182%;
+					font-size: 18px;
+					font-weight: 400;
+				}
+				.placeholder-container {
+					margin-bottom: 20px;
+				}
+
+				.btn {
+					margin-top: 34px;
+					padding-left: 60px;
+					padding-right: 60px;
+				}
+			}
+		}
+
+		.btn__large {
+			padding-left: 57px;
+			padding-right: 57px;
+		}
+	}
+
+	@import "../_parts/sliders/slider-cat";
+
+}

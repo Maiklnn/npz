@@ -1,0 +1,14 @@
+- var item_good = 'item-equipment'
+mixin goods(list)
+	each item in list
+		div(class=`${item_good}`)
+
+			div(class=`${item_good}__left`)
+				div(class=`${item_good}__left-name`)= item.name
+				p(class=`${item_good}__left-descr`)= item.descr
+
+			div(class=`${item_good}__right`): img(src=`assets/img/content/tools/${item.img}` alt=`#`)
+
+
+
+

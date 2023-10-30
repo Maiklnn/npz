@@ -1,0 +1,48 @@
+.checkbox {
+	cursor: pointer;
+	input {
+		pointer-events: none;
+		-webkit-appearance: none;
+		appearance: none;
+		position: absolute;
+
+		&:checked + span {
+			&:before {
+				background: #FFB444 url("../img/icon/checed--catalog.svg") no-repeat center center;
+				border: 2px solid #FFB444;
+			}
+		}
+	}
+
+	span {
+		pointer-events: none;
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		&:before {
+			width: 20px;
+			height: 20px;
+			border-radius: 3px;
+			border: 2px solid #CDCDCD;
+			background-color: #fff;
+			transition: all .1s;
+			content: '';
+		}
+	}
+
+	&:hover {
+		span {
+			&:before {
+				border: 2px solid #B0B0B0;
+			}
+		}
+	}
+
+
+	// в каталоге
+	&--catalog {
+		display: block;
+		margin-bottom: 12px;
+	}
+
+}

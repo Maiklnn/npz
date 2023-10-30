@@ -1,0 +1,18 @@
+- var class_name = 'offer'
+section(class=`${class_name} `)
+	div(class=`container`)
+		h1.title Производство пружин и изделий из проволки для всех отраслей промышленности
+
+		div(class=`${class_name}__list`)
+			mixin item(name, icon)
+				label(class=`item`)
+					div(class=`item__icon`): img(src=`assets/img/icon/header-advantages/${icon}` alt=`#`)
+					div(class=`item__name`)= name
+
+			+item('Собственное производство', '1.svg')
+			+item('Качественно', '2.svg')
+			+item('Обрабатываем проволку от 0,5 мм до 14,0 мм', '3.svg')
+
+		div(class=`${class_name}__btns`)
+			button.btn Заказать расчёт
+			button(class="btn" data-show="[data-popup='order-application']") Заказать звонок
