@@ -1,11 +1,11 @@
 - var class_name = 'steps'
 section(class=`${class_name} `)
 	div(class=`container`)
-		h2.title__decor Этары работ
+		h2.title__decor Этапы работ
 
 		div(class=`${class_name}__list`)
 			mixin item(name, icon)
-				label(class=`item`)
+				div(class=`item`)
 					div(class=`item__icon`): img(src=`assets/img/icon/step/${icon}` alt=`#`)
 					div(class=`item__name`)= name
 

@@ -2,9 +2,22 @@
 	color: #000;
 	font-size: 20px;
 	font-weight: 600;
-	overflow: hidden;
+
 
 	@import "row1";
 
 	@import "row2";
+
+    &--fixed {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1440px;
+        background-color: #fff;
+        z-index: 99;
+        .header-row1 {
+            display: none;
+        }
+    }
 }

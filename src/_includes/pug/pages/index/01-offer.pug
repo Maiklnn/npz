@@ -1,18 +1,23 @@
 - var class_name = 'offer'
 section(class=`${class_name} `)
-	div(class=`container`)
-		h1.title Производство пружин и изделий из проволки для всех отраслей промышленности
+    div(class=`container`)
+        h1.title Производство пружин и изделий из проволки для всех отраслей промышленности
+        p Изготовление деталей из мягкой и жёсткой проволоки Ø от 1,4 до 13 мм
 
-		div(class=`${class_name}__list`)
-			mixin item(name, icon)
-				label(class=`item`)
-					div(class=`item__icon`): img(src=`assets/img/icon/header-advantages/${icon}` alt=`#`)
-					div(class=`item__name`)= name
+        div(class=`${class_name}__btns`)
+            button.btn Заказать расчёт
+            button(class="btn" data-show="[data-popup='order-application']") Заказать звонок
 
-			+item('Собственное производство', '1.svg')
-			+item('Качественно', '2.svg')
-			+item('Обрабатываем проволку от 0,5 мм до 14,0 мм', '3.svg')
 
-		div(class=`${class_name}__btns`)
-			button.btn Заказать расчёт
-			button(class="btn" data-show="[data-popup='order-application']") Заказать звонок
+
+- var class_name = 'header-advantages'
+section(class=`${class_name} container`)
+    mixin item(name, descr, icon)
+        div(class=`item`)
+            div(class=`item__icon`): img(src=`assets/img/icon/header-advantages/${icon}` alt=`#`)
+            div(class=`item__name`)= name
+            div(class=`item__descr`)= descr
+
+    +item('Качественная продукция', 'Проверка качества на всех этапах - отдел контроля качества', '1.svg')
+    +item('Приемлемая цена', 'Исключаем все ошибки на этапе просчета технологии и калькуляции цены', '2.svg')
+    +item('Поставка точно в срок', 'Материал в наличии, опытные технологи, наладчики, производственный план', '3.svg')

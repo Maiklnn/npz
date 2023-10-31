@@ -1,8 +1,7 @@
-class Webnn {
+class Scroll {
 	constructor() {
 		this.scroll()
 		this.events();
-		this.lib();
 	}
 
 	events() {
@@ -79,12 +78,10 @@ class Webnn {
 
 	}
 
-
-
-
 }
 
-// new Webnn();
+new Scroll();
+
 
 class SliderSwiper {
 
@@ -7407,7 +7404,205 @@ class SliderSwiper {
 	}
 
 }
+
 new SliderSwiper();
+
+
+// form
+class Form{
+
+    constructor(options) {
+        this.events();
+    }
+
+    events() {
+        document.addEventListener('click', (e) => {
+            this.e = e
+            this.element = e.target;
+
+            // mask
+            if (this.element.dataset.mask) this.mask();
+
+            // form-btn
+            if (this.element.dataset.form) this.validate();
+
+
+        });
+
+    }
+
+    validate() {
+        this.e.preventDefault()
+        this.form = this.element.closest('form')
+        console.log(this.form)
+        this.necessarily = this.form.querySelectorAll('[required]');
+        this.error = 0;
+
+        let addError = input => {
+            input.classList.add('error');
+            this.error++;
+        }
+
+        let removeError = input => {
+            input.classList.remove('error');
+        }
+
+        this.necessarily.forEach((item) => {
+            removeError(item)
+            if (item.value === '') addError(item);
+            if (item.dataset.value === '0') addError(item);
+        });
+
+        if(this.error === 0) this.getData()
+
+    }
+
+    getData() {
+        // прикпеклённый файл
+        this.file = this.form.querySelector('[path]');
+        if(this.file) this.file = this.file.getAttribute('path');
+        this.formData = [...new FormData(this.form), ['link', `${document.location.href}`], ['file', this.file]]; // данные формы
+
+        // доп данные
+        this.dataValue = this.form.querySelectorAll(`[data-send]`);
+        this.dataValue.forEach(item => {
+            let arrItem = item.dataset.send.split('-!-')
+            arrItem.forEach(item => {
+                let arrField = item.split(':')
+                this.formData.push([arrField[0], arrField[1]]);
+            });
+        });
+        // данные из localStorage
+        // let localData = JSON.parse(localStorage.getItem('arrItems'));
+        this.submitForm();
+    }
+
+    async submitForm() {
+        this.url = `/ajax/phpmailer/send.php`;
+        this.body = JSON.stringify(Object.fromEntries(this.formData));
+        console.log(this.formData)
+        let data = await this.sendRequest();
+        if(data.status) {
+            this.form.reset();
+            if(data.target) console.log(data.target);
+            alert('Спасибо, мы с Вами свяжемся в ближайшее время!')
+        }
+
+
+
+    }
+
+    sendRequest () {
+        return fetch(this.url, {
+            method: 'POST',
+            body: this.body,
+        })
+            .then(response => response.json())
+            .catch(err => console.log(err))
+    }
+
+    mask() {
+        let maskInput = this.element.dataset.mask;
+
+        let getInputNumbersValue = input => input.value.replace(/\D/g, '');
+
+        if(maskInput === 'tel') {
+
+            let onInput = function (e) {
+                let input = e.target;
+                let	inputNumbersValue = getInputNumbersValue(input);
+                let	selectionStart = input.selectionStart;
+                let	formattedInputValue = "";
+
+                if (input.value.length != selectionStart) {
+                    if (e.data && /\D/g.test(e.data)) {
+                        input.value = inputValue;
+                    }
+                    return;
+                }
+
+                var firstSymbols = (inputNumbersValue[0] == "8") ? "8" : "+7";
+                formattedInputValue = input.value = firstSymbols + " ";
+                if (inputNumbersValue.length > 1) {
+                    formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
+                }
+                if (inputNumbersValue.length >= 5) {
+                    formattedInputValue += ') ' + inputNumbersValue.substring(4, 7);
+                }
+                if (inputNumbersValue.length >= 8) {
+                    formattedInputValue += '-' + inputNumbersValue.substring(7, 9);
+                }
+                if (inputNumbersValue.length >= 10) {
+                    formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
+                }
+
+
+
+
+
+                input.value = formattedInputValue;
+            }
+
+            let onPhonePaste = function (e) {
+                var input = e.target,
+                    inputNumbersValue = getInputNumbersValue(input);
+                var pasted = e.clipboardData || window.clipboardData;
+                if (pasted) {
+                    var pastedText = pasted.getData('Text');
+                    if (/\D/g.test(pastedText)) {
+                        // Attempt to paste non-numeric symbol — remove all non-numeric symbols,
+                        // formatting will be in onPhoneInput handler
+                        input.value = inputNumbersValue;
+                        return;
+                    }
+                }
+            }
+
+            let onPhoneKeyDown = function (e) {
+                // Clear input after remove last symbol
+                var inputValue = e.target.value.replace(/\D/g, '');
+                if (e.keyCode == 8 && inputValue.length == 1) {
+                    e.target.value = "";
+                }
+            }
+
+            this.element.addEventListener('keydown', onPhoneKeyDown);
+            this.element.addEventListener('input', onInput, false);
+            this.element.addEventListener('paste', onPhonePaste, false);
+        }
+
+        if(maskInput === 'date') {
+            let onInput = function (e) {
+                let input = e.target;
+                let	inputValue = getInputNumbersValue(input);
+                let formattedInputValue = '';
+                let	selectionStart = input.selectionStart;
+
+                if (input.value.length != selectionStart) {
+                    if (e.data && /\D/g.test(e.data)) input.value = inputValue;
+                    return;
+                }
+
+                if (inputValue.length > 0 && parseInt(inputValue[0]) < 4) formattedInputValue += inputValue.substring(0, 1);
+                if (inputValue.length >= 2) formattedInputValue += inputValue.substring(1, 2);
+                if (inputValue.length >= 3 && parseInt(inputValue[2]) < 2) formattedInputValue += '.' + inputValue.substring(2, 3);
+                if (inputValue.length >= 4) formattedInputValue += inputValue.substring(3, 4);
+                if (inputValue.length >= 5) formattedInputValue += '.' + inputValue.substring(4, 6);
+                input.value = formattedInputValue;
+            }
+            this.element.addEventListener('input', onInput, false);
+        }
+
+
+
+    }
+
+}
+
+new Form();
+
+
+
 
 
 

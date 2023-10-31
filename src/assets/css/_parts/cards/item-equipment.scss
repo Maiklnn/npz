@@ -4,6 +4,8 @@
 
 	&__left {
 		padding: 40px 5px 20px 20px;
+        flex-grow: 1;
+
 		&-name {
 			margin-bottom: 30px;
 			font-size: 20px;
