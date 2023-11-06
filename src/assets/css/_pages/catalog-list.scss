@@ -1,0 +1,49 @@
+
+.cat-list {
+    margin-bottom: 80px;
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        @import "../_parts/cards/item-on-shipings";
+    }
+
+
+
+    @media(max-width: 1220px) {
+        //&__list-goods {
+        //	grid-template-columns: 1fr 1fr;
+        //}
+    }
+
+    @media(max-width: 600px) {
+        &__list-goods {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+
+}
+
+.card-list {
+    &__main {
+        display: flex;
+        margin-bottom: 84px;
+        gap: 20px;
+        &-left {
+            outline: 1px solid green;
+            width: 280px;
+        }
+        &-right {
+            width: 280px;
+            outline: 1px solid green;
+            flex-grow: 1;
+            &-list {
+
+            }
+        }
+
+    }
+}

@@ -1,43 +1,47 @@
 - var class_name = 'springs'
 section(class=`${class_name} container`)
-	h2(class='title__decor') Пружины
+    if(title === 'Главная')
+        h2(class='title__decor') Пружины
+    if(title === 'Каталог')
+        h2(class='title__decor') Каталог
+        div(class='title__cat') По принципу работы:
 
-	div(class=`${class_name}__list`)
-		include ../../parts/card/item-springs
-		+goods([
-				{
-					'img': '1.jpg',
-					'name': 'Пружины сжатия',
-				},
-				{
-					'img': '2.jpg',
-					'name': 'Пружины растяжения',
-				},
-				{
-					'img': '3.jpg',
-					'name': 'Пружины кручения',
-				},
-				{
-					'img': '4.jpg',
-					'name': 'Мебелные пружины',
-				},
-				{
-					'img': '5.jpg',
-					'name': 'Пружины квадратного и п/у сечения',
-				},
-				{
-					'img': '6.jpg',
-					'name': 'Пружины типа zig zag',
-				},
-				{
-					'img': '7.jpg',
-					'name': 'Нестандартные пружины',
-				},
-				{
-					'img': '8.jpg',
-					'name': 'Автомобильные пружины',
-				},
-			])
+    div(class=`${class_name}__list`)
+        include ../../parts/card/item-springs
+        +goods([
+            {
+                'img': '1.jpg',
+                'name': 'Пружины сжатия',
+            },
+            {
+                'img': '2.jpg',
+                'name': 'Пружины растяжения',
+            },
+            {
+                'img': '3.jpg',
+                'name': 'Пружины кручения',
+            },
+            {
+                'img': '4.jpg',
+                'name': 'Мебелные пружины',
+            },
+            {
+                'img': '5.jpg',
+                'name': 'Пружины квадратного и п/у сечения',
+            },
+            {
+                'img': '6.jpg',
+                'name': 'Пружины типа zig zag',
+            },
+            {
+                'img': '7.jpg',
+                'name': 'Нестандартные пружины',
+            },
+            {
+                'img': '8.jpg',
+                'name': 'Автомобильные пружины',
+            },
+        ])
 
 
 

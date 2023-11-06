@@ -1,5 +1,7 @@
 @import "../_parts/sliders/swiper.min";
 
+
+
 .page-home {
 
 	.offer {
@@ -57,115 +59,7 @@
 
 	}
 
-    .header-advantages {
-        margin-bottom: 120px;
-        display: flex;
-        justify-content: space-between;
 
-        .item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 300px;
-            text-align: center;
-            &__icon{
-                margin-bottom: 50px;
-            }
-            &__name{
-                margin-bottom: 27px;
-                font-size: 22px;
-                font-weight: 600;
-            }
-            &__descr {
-                font-size: 16px;
-                font-weight: 400;
-            }
-        }
-    }
-
-	.springs {
-		margin-bottom: 108px;
-
-
-		&__list {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			column-gap: 16px;
-			row-gap: 49px;
-			@import "../_parts/cards/item-shipings";
-		}
-
-
-
-		@media(max-width: 1220px) {
-			//&__list-goods {
-			//	grid-template-columns: 1fr 1fr;
-			//}
-		}
-
-		@media(max-width: 600px) {
-			&__list-goods {
-				grid-template-columns: 1fr;
-			}
-		}
-
-
-
-	}
-
-	.on-springs {
-		margin-bottom: 108px;
-
-		&__list {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			column-gap: 16px;
-			row-gap: 49px;
-			@import "../_parts/cards/item-on-shipings";
-		}
-
-
-
-		@media(max-width: 1220px) {
-			//&__list-goods {
-			//	grid-template-columns: 1fr 1fr;
-			//}
-		}
-
-		@media(max-width: 600px) {
-			&__list-goods {
-				grid-template-columns: 1fr;
-			}
-		}
-
-
-
-	}
-
-	.coast-popup {
-		padding: 80px 0;
-		@include gradient(90);
-		text-align: center;
-		color: #fff;
-		margin-bottom: 120px;
-		h2 {
-			font-size: 40px;
-			margin-bottom: 38px;
-		}
-
-		p {
-			margin-bottom: 65px;
-			font-size: 18px;
-			font-weight: 400;
-		}
-
-		.btn {
-			background: #fff;
-			color: $accent;
-			padding: 25px 64px;
-
-		}
-	}
 
 	.about {
 		margin-bottom: 120px;
@@ -199,7 +93,6 @@
 
 		}
 	}
-
 
 	.equipment {
 		margin-bottom: 120px;
@@ -381,8 +274,6 @@
 		}
 	}
 
-	@import "../_parts/sliders/slider-clients";
-
 	.form {
 		margin-bottom: 120px;
 		padding: 40px 0 80px;
@@ -439,6 +330,9 @@
 		}
 	}
 
-	@import "../_parts/sliders/slider-cat";
+
 
 }
+
+
+

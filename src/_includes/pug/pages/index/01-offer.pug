@@ -10,14 +10,4 @@ section(class=`${class_name} `)
 
 
 
-- var class_name = 'header-advantages'
-section(class=`${class_name} container`)
-    mixin item(name, descr, icon)
-        div(class=`item`)
-            div(class=`item__icon`): img(src=`assets/img/icon/header-advantages/${icon}` alt=`#`)
-            div(class=`item__name`)= name
-            div(class=`item__descr`)= descr
-
-    +item('Качественная продукция', 'Проверка качества на всех этапах - отдел контроля качества', '1.svg')
-    +item('Приемлемая цена', 'Исключаем все ошибки на этапе просчета технологии и калькуляции цены', '2.svg')
-    +item('Поставка точно в срок', 'Материал в наличии, опытные технологи, наладчики, производственный план', '3.svg')
+include ../../parts/advantages

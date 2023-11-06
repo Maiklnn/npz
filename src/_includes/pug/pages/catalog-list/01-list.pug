@@ -1,0 +1,54 @@
+- var class_name = 'cat-list'
+section(class=`${class_name} container`)
+    h2(class='title__decor') Пружины для сельскохозяйственной техники
+
+    div(class=`${class_name}__list`)
+        - var item_good = 'item-list'
+        mixin goods(list)
+            each item in list
+                div(class=`${item_good}`)
+                    div(class=`${item_good}__name`)= item.name
+                    // img(src=`assets/img/content/${item.img}` alt=`#`)
+                    img(src=`assets/img/content/cat-list.jpg` alt=`#`)
+
+        +goods([
+            {
+                'img': 'cat-list.jpg',
+                'name': 'На бороны',
+            },
+            {
+                'img': '2.jpg',
+                'name': 'На культиваторы',
+            },
+            {
+                'img': '3.jpg',
+                'name': 'На посевную технику',
+            },
+            {
+                'img': '4.jpg',
+                'name': 'На пресс-подборщики',
+            },
+            {
+                'img': '5.jpg',
+                'name': 'На комбайны',
+            },
+            {
+                'img': '6.jpg',
+                'name': 'На роторные грабли',
+            },
+            {
+                'img': '7.png',
+                'name': 'На колесно-пальцевые грабли',
+            },
+            {
+                'img': '8.jpg',
+                'name': 'Дисковые и штригельные бороны',
+            },
+        ])
+
+
+
+
+
+
+
