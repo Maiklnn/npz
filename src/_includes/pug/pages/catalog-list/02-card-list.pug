@@ -1,50 +1,141 @@
-- var class_name = 'card-list'
+- var class_name = 'body'
 section(class=`${class_name} container`)
-    div(class=`${class_name}__main`)
-        div(class=`${class_name}__main-left`) 1
+	div(class=`${class_name}__inner`)
 
-        div(class=`${class_name}__main-right`)
+		div(class=`${class_name}__inner-left`)
+			.filters
+				.filters__title Фильтр
+				.filters-price
+					h3.filters-price__title Наруж. диаметр пружины, мм
 
-            div(class=`${class_name}__main-right-list`)
+					.filters-price__inputs
+						label(class="filters-price__label")
+							span(class="filters-price__text") от
+							input(type="number" class="filters-price__input" data-input="1")
+						label(class="filters-price__label")
+							span(class="filters-price__text") до
+							input(type="number" class="filters-price__input" data-input="2")
 
-                - var item_good = 'item-list'
-                mixin goods(list)
-                    each item in list
-                        div(class=`${item_good}`)
-                            div(class=`${item_good}__name`)= item.name
-                            img(src=`assets/img/content/cat-list.jpg` alt=`#`)
+					div(class="filters-price__slider" data-range = 'min=0;max=100;startInit=22.5;endInit=72')
 
-                +goods([
-                    {
-                        'img': 'cat-list.jpg',
-                        'name': 'На бороны',
-                    },
-                    {
-                        'img': '2.jpg',
-                        'name': 'На культиваторы',
-                    },
-                    {
-                        'img': '3.jpg',
-                        'name': 'На посевную технику',
-                    },
-                    {
-                        'img': '4.jpg',
-                        'name': 'На пресс-подборщики',
-                    },
-                    {
-                        'img': '5.jpg',
-                        'name': 'На комбайны',
-                    },
-                    {
-                        'img': '6.jpg',
-                        'name': 'На роторные грабли',
-                    },
-                    {
-                        'img': '7.png',
-                        'name': 'На колесно-пальцевые грабли',
-                    },
-                    {
-                        'img': '8.jpg',
-                        'name': 'Дисковые и штригельные бороны',
-                    },
-                ])
+
+
+				.filters-price
+					h3.filters-price__title Диаметр проволоки, мм
+
+					.filters-price__inputs
+						label(class="filters-price__label")
+							span(class="filters-price__text") от
+							input(type="number" class="filters-price__input" data-input="1")
+						label(class="filters-price__label")
+							span(class="filters-price__text") до
+							input(type="number" class="filters-price__input" data-input="2")
+
+					div(class="filters-price__slider" data-range = 'min=0;max=20;startInit=5.5;endInit=10')
+
+
+				.filters-price
+					h3.filters-price__title Длина по телу, мм
+
+					.filters-price__inputs
+						label(class="filters-price__label")
+							span(class="filters-price__text") от
+							input(type="number" class="filters-price__input" data-input="1")
+						label(class="filters-price__label")
+							span(class="filters-price__text") до
+							input(type="number" class="filters-price__input" data-input="2")
+					div(class="filters-price__slider" data-range = 'min=0;max=1000;startInit=66.6;endInit=693')
+
+
+
+				a(href='' class='btn') Применить
+
+		div(class=`${class_name}__inner-right`)
+			div(class=`${class_name}__inner-right-list`)
+				- var item_good = 'item-list'
+				mixin goods(list)
+					each item in list
+						div(class=`${item_good}`)
+							div(class=`${item_good}__name`)= item.name
+							div(class=`${item_good}__img-box`)
+								img(src=`assets/img/content/${item.img}` alt=`#`)
+							div(class=`${item_good}__spesification`)
+								div(class=`${item_good}__spesification-term`) Длина пружины:
+								div(class=`${item_good}__spesification-val`)= item.spec1
+							div(class=`${item_good}__spesification`)
+								div(class=`${item_good}__spesification-term`) Диаметр проволки:
+								div(class=`${item_good}__spesification-val`)= item.spec2
+							div(class=`${item_good}__spesification`)
+								div(class=`${item_good}__spesification-term`) Сталь:
+								div(class=`${item_good}__spesification-val`)= item.spec3
+							div(class=`${item_good}__spesification`)
+								div(class=`${item_good}__spesification-term`) Вес:
+								div(class=`${item_good}__spesification-val`)= item.spec4
+
+							a(class='btn' href='') Подробнее
+				+goods([
+							{
+								'img': 'product.jpg',
+								'name': 'Зуб пружинный на пресс-подборщик Takakita RB1060',
+								'spec1': '186 мм',
+								'spec2': '5,5 мм',
+								'spec3': 'Пружинная высокоуглеродистая ГОСТ 9389-75 Б-2',
+								'spec4': '0,32 кг',
+							},
+							{
+								'img': 'product.jpg',
+								'name': 'Зуб пружинный на пресс-подборщик Takakita RB1060',
+								'spec1': '186 мм',
+								'spec2': '5,5 мм',
+								'spec3': 'Пружинная высокоуглеродистая ГОСТ 9389-75 Б-2',
+								'spec4': '0,32 кг',
+							},
+							{
+								'img': 'product.jpg',
+								'name': 'Зуб пружинный на пресс-подборщик Takakita RB1060',
+								'spec1': '186 мм',
+								'spec2': '5,5 мм',
+								'spec3': 'Пружинная высокоуглеродистая ГОСТ 9389-75 Б-2',
+								'spec4': '0,32 кг',
+							},
+							{
+								'img': 'product.jpg',
+								'name': 'Зуб пружинный на пресс-подборщик Takakita RB1060',
+								'spec1': '186 мм',
+								'spec2': '5,5 мм',
+								'spec3': 'Пружинная высокоуглеродистая ГОСТ 9389-75 Б-2',
+								'spec4': '0,32 кг',
+							},
+							{
+								'img': 'product.jpg',
+								'name': 'Зуб пружинный на пресс-подборщик Takakita RB1060',
+								'spec1': '186 мм',
+								'spec2': '5,5 мм',
+								'spec3': 'Пружинная высокоуглеродистая ГОСТ 9389-75 Б-2',
+								'spec4': '0,32 кг',
+							},
+							{
+								'img': 'product.jpg',
+								'name': 'Зуб пружинный на пресс-подборщик Takakita RB1060',
+								'spec1': '186 мм',
+								'spec2': '5,5 мм',
+								'spec3': 'Пружинная высокоуглеродистая ГОСТ 9389-75 Б-2',
+								'spec4': '0,32 кг',
+							},
+
+						])
+
+	div(class='pagination')
+		a(href='/') <
+		a(class='active' href='/') 1
+		a(href='/') 2
+		a(href='/') 3
+		a(href='/') 4
+		a(href='/') 5
+		a(href='/') ...
+		a(href='/') 6
+		a(href='/') 7
+		a(href='/') 8
+		a(href='/') 9
+		a(href='/') 10
+		a(href='/') >
