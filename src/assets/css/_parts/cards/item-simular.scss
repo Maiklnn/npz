@@ -1,0 +1,34 @@
+.item-list {
+    border: 1px solid #1A6BA3;
+    box-shadow: 0 0 5px 0 #1A6BA3;
+
+
+    padding: 20px 39px;
+    min-width: 270px;
+    max-width: 279px;
+    display: flex;
+    flex-direction: column;
+	&__img-box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20px;
+		width: 200px;
+		height: 156px;
+	}
+
+    &__name {
+		text-align: center;
+		font-size: 14px;
+		font-weight: 600;
+   }
+
+	.btn {
+		max-width: 192px;
+		min-width: 192px;
+		margin: 30px auto 0 auto;
+		font-size: 18px;
+		font-weight: 600;
+	}
+
+}

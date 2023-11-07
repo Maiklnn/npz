@@ -1,93 +1,66 @@
 - var class_name = 'product'
 section(class=`${class_name} container`)
-	h1 Зуб пружинный на пресс-подборщик Takakita RB1060
-	//- box
-	div(class=`${class_name}__box`)
-		//- slider
-		div(class=`slider`)
+    h1 Зуб пружинный на пресс-подборщик Takakita RB1060
+    //- box
+    div(class=`${class_name}__box`)
+        //- slider
+        div(class=`slider`)
 
-			div(class = 'slider__top-block')
+            div(class = 'slider__top-block')
 
-				div(class = 'slider__arr-last' data-index='last')
+                div(class = 'slider__arr-last' data-index='last')
 
-				div(class='slider__top-img')
+                div(class='slider__top-img')
 
-				div(class = 'slider__arr-next' data-index='next')
-
-
-
-			div(class = 'slider__thumbnail-block' data-slider = '.slider__top-img')
-				div(class = 'wrapper')
-					div(class = 'slide')
-						img(src="https://gugos.ru/img/%D0%9F%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE/%D0%9C%D0%9E%20%D0%93%D0%BE%D1%80%D0%BA%D0%B8/001.jpg"  alt="")
-
-					div(class = 'slide')
-						img(src="https://gugos.ru/userfls/editor/large/244_002.jpg" alt="")
-
-					div(class = 'slide')
-						img(src="https://gugos.ru//img/%D0%9F%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE/%D0%9C%D0%9E%20%D0%93%D0%BE%D1%80%D0%BA%D0%B8/002.jpg" alt="")
-
-					div(class = 'slide')
-						img(src="https://gugos.ru/userfls/editor/large/243_001.jpg" alt="")
-
-					div(class = 'slide')
-						img(src="https://gugos.ru/userfls/editor/large/243_001.jpg" alt="")
-
-					div(class = 'slide')
-						img(src="https://gugos.ru/img/%D0%9F%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE/%D0%A7%D1%83%D1%80%D0%B8%D0%BB%D0%B8%D1%85%D0%B0/003.jpg" alt="")
+                div(class = 'slider__arr-next' data-index='next')
 
 
 
+            div(class = 'slider__thumbnail-block' data-slider = '.slider__top-img')
+                div(class = 'wrapper')
+                    div(class = 'slide')
+                        img(src="https://gugos.ru/img/%D0%9F%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE/%D0%9C%D0%9E%20%D0%93%D0%BE%D1%80%D0%BA%D0%B8/001.jpg"  alt="")
 
-		//- right-box
-		- var right_box = 'right-box'
-		div(class=`right-box`)
-			div(class=`${item_good}__spesification`)
-				div(class=`${item_good}__spesification-term`) Наруж. диаметр пружины:
-				div(class=`${item_good}__spesification-val`) 140 мм
+                    div(class = 'slide')
+                        img(src="https://gugos.ru/userfls/editor/large/244_002.jpg" alt="")
 
-			div(class=`${item_good}__spesification`)
-				div(class=`${item_good}__spesification-term`) Внутр. диаметр пружины:
-				div(class=`${item_good}__spesification-val`) 29 мм
+                    div(class = 'slide')
+                        img(src="https://gugos.ru//img/%D0%9F%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE/%D0%9C%D0%9E%20%D0%93%D0%BE%D1%80%D0%BA%D0%B8/002.jpg" alt="")
 
-			div(class=`${item_good}__spesification`)
-				div(class=`${item_good}__spesification-term`) Диаметр проволоки:
-				div(class=`${item_good}__spesification-val`) 5 мм
+                    div(class = 'slide')
+                        img(src="https://gugos.ru/userfls/editor/large/243_001.jpg" alt="")
 
-			div(class=`${item_good}__spesification`)
-				div(class=`${item_good}__spesification-term`) Сталь:
-				div(class=`${item_good}__spesification-val`) Пружинная высокоуглеродистая ГОСТ 9389-75 Б-2
+                    div(class = 'slide')
+                        img(src="https://gugos.ru/userfls/editor/large/243_001.jpg" alt="")
 
-			div(class=`${item_good}__spesification`)
-				div(class=`${item_good}__spesification-term`) Вес:
-				div(class=`${item_good}__spesification-val`) 0,15кг
-
-			a(class='btn' href='/') Узнать цену
-
-
-- var class_name = `${class_name}-tab`
-div(class=`${class_name} tab`)
-	//- ссылки
-	div(class=`tab__nav`)
-		a(class=`tab__link  tab__link--active` data-tab_link = '1' href = '#') Описание
-		a(class=`tab__link` data-tab_link = '2' href = '#') Характерисики
-		a(class=`tab__link` data-tab_link = '3' href = '#') Подобрать похожие
-
-	//- контент первого таба
-	div(class=`tab__content-item tab__content-item--active` data-tab_content = '1')
-		p Волейбольный мяч Simple предназначен для любительской игры и ориентирован на комплектацию бюджетных заказов в рамках госзакупок для поставок в общеобразовательные учреждения. Simple как нельзя лучше соответствует пресловутому соотношению цена/качество: прекрасные технические и игровые характеристики, обусловленные применением по-настоящему мягкого, нетравмоопасного материала покрышки, качество изготовления и более чем разумная цена делают его бестселлером среди мячей для классического волейбола любительского уровня.Мяч подходит для игры в залах и специально оборудованных уличных площадках с нежестким синтетическим покрытием, не рекомендуется играть им на очень жестких поверхностях (асфальт, гаревые площадки и т.п.).Мягкая, матовая синтетическая кожа (ТПУ), бутиловая камера, нейлоновый корд, машинная сшивка. 18 панелей, размер 5, стандартные параметры (вес 260-280 г, длина окружности 65-67 см).В комплект входит игла для накачивания, инструкция по эксплуатации и уходу за мячом.
-		p Размер 5.
-		p Упакованы в короб по 10 мячей.
+                    div(class = 'slide')
+                        img(src="https://gugos.ru/img/%D0%9F%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE/%D0%A7%D1%83%D1%80%D0%B8%D0%BB%D0%B8%D1%85%D0%B0/003.jpg" alt="")
 
 
 
 
+        //- right-box
+        - var right_box = 'right-box'
+        div(class=`right-box`)
+            div(class=`${right_box}__spesification`)
+                div(class=`${right_box}__spesification-term`) Наруж. диаметр пружины:
+                div(class=`${right_box}__spesification-val`) 140 мм
 
+            div(class=`${right_box}__spesification`)
+                div(class=`${right_box}__spesification-term`) Внутр. диаметр пружины:
+                div(class=`${right_box}__spesification-val`) 29 мм
 
+            div(class=`${right_box}__spesification`)
+                div(class=`${right_box}__spesification-term`) Диаметр проволоки:
+                div(class=`${right_box}__spesification-val`) 5 мм
 
-	//- контент второго таба
-	div(class=`tab__content-item` data-tab_content = '2')
-		p Характеристики
-	//- контент третьего таба
-	div(class=`tab__content-item` data-tab_content = '3')
-		p Характеристики2
+            div(class=`${right_box}__spesification`)
+                div(class=`${right_box}__spesification-term`) Сталь:
+                div(class=`${right_box}__spesification-val`) Пружинная высокоуглеродистая ГОСТ 9389-75 Б-2
+
+            div(class=`${right_box}__spesification`)
+                div(class=`${right_box}__spesification-term`) Вес:
+                div(class=`${right_box}__spesification-val`) 0,15кг
+
+            a(class='btn' href='/') Узнать цену
+

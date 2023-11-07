@@ -1,0 +1,38 @@
+- var class_name = 'similar-product'
+section(class=`${class_name} container`)
+    h3 Похожие товары
+
+
+    div(class=`${class_name}__list`)
+        - var item_good = 'item-list'
+        mixin goods(list)
+            each item in list
+                div(class=`${item_good}`)
+                    div(class=`${item_good}__img-box`)
+                        img(src=`assets/img/content/cat-list.jpg` alt=`#`)
+                    div(class=`${item_good}__name`)= item.name
+                    a(class='btn' href='/') Побробнее
+
+        +goods([
+            {
+                'img': 'cat-list.jpg',
+                'name': 'Зуб пружинный на пресс-подборщик Takakita RB1060',
+            },
+            {
+                'img': '2.jpg',
+                'name': 'Зуб пружинный на пресс-подборщик Takakita RB1060',
+            },
+            {
+                'img': '3.jpg',
+                'name': 'Зуб пружинный на пресс-подборщик Takakita RB1060',
+            },
+            {
+                'img': '4.jpg',
+                'name': 'Зуб пружинный на пресс-подборщик Takakita RB1060',
+            },
+        ])
+
+
+
+    h3 Этот товар из подборок
+    a(class='btn btn--blue' href='/') Пружины для сельскохозяйственной техники

@@ -22,21 +22,17 @@ class Scroll {
 
 		// header
 		let header = document.querySelector('.header');
+        header.style.height = `${header.offsetHeight}px`;
+
+
+
 
 
 		window.onscroll = function() {
-			if(header && !header.parentElement.classList.contains('landing')) {
-				let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-				scrollTop > 300 ? scrollBtn.classList.add("scrollToTop--show") : scrollBtn.classList.remove("scrollToTop--show");
-				if(header) scrollTop > 100 ? header.classList.add("header--fixed") : header.classList.remove("header--fixed");
-			} else {
-				header = document.querySelector('.header-landing');
-				let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-				scrollTop > 300 ? scrollBtn.classList.add("scrollToTop--show") : scrollBtn.classList.remove("scrollToTop--show");
-				if(header) scrollTop > 300 ? header.classList.add("header--fixed") : header.classList.remove("header--fixed");
-			}
 
-
+		    let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            scrollTop > 300 ? scrollBtn.classList.add("scrollToTop--show") : scrollBtn.classList.remove("scrollToTop--show");
+            if(header) scrollTop > 300 ? header.classList.add("header--fixed") : header.classList.remove("header--fixed");
 		}
 
 		// прокрутка к элементу
@@ -137,6 +133,27 @@ class SliderSwiper {
 			});
 
 		})
+
+        sliders = document.querySelectorAll('.slider-reviews__swiper');
+        sliders.forEach((item) => {
+            new Swiper(item, {
+                spaceBetween: 20,
+                autoplay: { delay: 3000 },
+                slideToClickedSlide: true,
+                loop: true,
+                navigation: {
+                    nextEl: item.parentElement.querySelector('.swiper-button-prev'),
+                    prevEl: item.parentElement.querySelector(`.swiper-button-next`),
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+
+                }
+            });
+
+        })
 	}
 
 	lib() {
@@ -7685,7 +7702,7 @@ class Slider_thumbnail {
 		this.slideOffset = 15
 		this.slideCurrent = 0
 		this.slider = document.querySelector('[data-slider]')
-		this.init()
+        if(this.slider) this.init()
 
 		// клик
 		document.addEventListener('click', e => {

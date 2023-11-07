@@ -3,7 +3,8 @@ mixin goods(list)
     each item in list
         div(class=`${item_good}`)
             div(class=`${item_good}__name`)= item.name
-            img(src=`assets/img/content/section4/${item.img}` alt=`#`)
+            div(class=`${item_good}__img-box`)
+                img(src=`assets/img/content/section4/${item.img}` alt=`#`)
 
 
 

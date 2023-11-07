@@ -1,0 +1,30 @@
+- var class_name = `${class_name}-tab`
+div(class=`${class_name} tab container`)
+    //- ссылки
+    div(class=`tab__nav`)
+        a(class=`tab__link  tab__link--active` data-tab_link = '1' href = '#') Описание
+        a(class=`tab__link` data-tab_link = '2' href = '#') Характерисики
+        a(class=`tab__link` data-tab_link = '3' href = '#') Доставка
+        a(class=`tab__link` data-tab_link = '4' href = '#') Оплата
+        a(class=`tab__link` data-tab_link = '5' href = '#') Техническая документация
+
+    //- контент первого таба
+    div(class=`tab__content-item tab__content-item--active` data-tab_content = '1')
+        h3 ОСНОВНЫЕ ХАРАКТЕРИСТИКИ:
+        ul
+            li 1. Термообработка металла — готовые изделия не теряют жесткости и прочности в течение всего периода работы.
+            li 2. Изготавливаются из высококачественной сертифицированной проволоки российского и зарубежного <br> производства.
+            li 3. Покрытие: оцинковка, порошковое покрытие, окрашивание для защиты пружин от коррозии.
+            li 4. Цвет покрытия: стандартные(черный, красный, серый) или индивидуально под ваш запрос.
+    //- контент второго таба
+    div(class=`tab__content-item` data-tab_content = '2')
+        p Характеристики
+    //- контент третьего таба
+    div(class=`tab__content-item` data-tab_content = '3')
+        p доставка
+    //- контент оплата
+    div(class=`tab__content-item` data-tab_content = '4')
+        p доставка
+    //- контент тех док
+    div(class=`tab__content-item` data-tab_content = '5')
+        p доставка
