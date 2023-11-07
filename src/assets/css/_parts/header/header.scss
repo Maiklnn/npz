@@ -17,8 +17,16 @@
         background-color: #fff;
         z-index: 99;
         height: initial !important;
+        transition: opacity .3s;
+        opacity: 0;
+        visibility: hidden;
         .header-row1 {
             display: none;
         }
+        &.show {
+            opacity: 1;
+            visibility: visible;
+        }
     }
+
 }

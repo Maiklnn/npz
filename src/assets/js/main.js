@@ -8,31 +8,30 @@ class Scroll {
 		// клик
 		document.addEventListener('click', e => {
 			this.element = e
-			this.target = e.target
-			// scroll
+            this.target = e.target
+
 			if(this.target.dataset.scroll) this.scroll()
 		});
 	}
 
 	scroll() {
-		// прокрутка
-		// нижняя кнопка scroll
-		document.body.insertAdjacentHTML('beforeend', '<div class="scrollToTop" data-scroll = "body"></div>')
+    	document.body.insertAdjacentHTML('beforeend', '<div class="scrollToTop" data-scroll = "body"></div>')
 		let scrollBtn = document.querySelector('.scrollToTop');
 
 		// header
 		let header = document.querySelector('.header');
-        header.style.height = `${header.offsetHeight}px`;
-
-
+        let scrollHeader = header.cloneNode(true);
+        scrollHeader.classList.add("header--fixed")
+        document.body.insertAdjacentHTML('beforeend', scrollHeader.outerHTML)
+        scrollHeader = document.querySelector('.header.header--fixed');
 
 
 
 		window.onscroll = function() {
-
 		    let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
             scrollTop > 300 ? scrollBtn.classList.add("scrollToTop--show") : scrollBtn.classList.remove("scrollToTop--show");
-            if(header) scrollTop > 300 ? header.classList.add("header--fixed") : header.classList.remove("header--fixed");
+            scrollTop > 300 ? scrollHeader.classList.add("show") : scrollHeader.classList.remove("show");
+
 		}
 
 		// прокрутка к элементу
@@ -7924,6 +7923,7 @@ document.addEventListener('click', e => {
 
 		let elementShow = document.querySelector(dataShow)
 		elementShow.classList.toggle('show')
+        console.log(elementShow)
 	}
 
 	// Удалени классв show

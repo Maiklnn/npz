@@ -1,0 +1,20 @@
+div(class=`modal-popup` data-close="1" data-popup="fast-order" )
+
+    - var class_name = 'order-call'
+    form(class=`${class_name}`)
+        div(class=`modal-popup-close` data-show="[data-popup='fast-order']")
+        div(class=`${class_name}__subtitle`) Оставьте номер телефона и мы перезвоним вам в ближайшее время
+
+        .placeholder-container
+            input(type="text" name="#" placeholder= ' ' required)
+            div(class='caption') Ваше Имя
+
+        .placeholder-container
+            input(type="text" name="#" data-mask="tel" placeholder= ' ' required)
+            div(class='caption')  +7 (999) 999-99-99
+
+        button(class='btn' data-form = 'true') Отправить
+
+        p Отправляя форму, я даю согласие на <a href = '/'>обработку персональных данных.</a>
+
+
