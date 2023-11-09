@@ -11,4 +11,7 @@
 	&:hover {
 		opacity: .8;
 	}
+    @media(max-width: 600px) {
+        font-size: 16px;
+    }
 }

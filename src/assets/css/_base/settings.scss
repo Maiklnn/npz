@@ -36,11 +36,14 @@ html {
 	.container {
 		max-width: $maxWidthContainer + px;
 		width: 100%;
-
 		margin-left: auto;
 		margin-right: auto;
 		padding-left: $containerPadding + px;
 		padding-right: $containerPadding + px;
+        @media (max-width: 600px) {
+           padding-left: 20px;
+           padding-right: 20px;
+        }
 	}
 
 

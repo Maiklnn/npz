@@ -25,15 +25,10 @@
 
 
 
-    @media(max-width: 1220px) {
-        //&__list-goods {
-        //	grid-template-columns: 1fr 1fr;
-        //}
-    }
-
-    @media(max-width: 600px) {
-        &__list-goods {
-            grid-template-columns: 1fr;
+    @media(max-width: 970px) {
+        &__list {
+        	grid-template-columns: 1fr 1fr;
+            gap: 50px;
         }
     }
 
@@ -55,13 +50,14 @@
 
 
     @media(max-width: 1220px) {
-        //&__list-goods {
-        //	grid-template-columns: 1fr 1fr;
-        //}
+        &__list {
+        	grid-template-columns: 1fr 1fr;
+        }
     }
 
-    @media(max-width: 600px) {
-        &__list-goods {
+    @media(max-width: 795px) {
+        margin-bottom: 40px;
+        &__list {
             grid-template-columns: 1fr;
         }
     }
@@ -93,6 +89,24 @@
         padding: 25px 64px;
 
     }
+    @media(max-width: 795px) {
+        padding: 60px 0;
+        margin-bottom: 60px;
+        h2 {
+            font-size: 25px;
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .btn {
+            padding: 17px 23px;
+
+        }
+
+    }
 }
 
 .breadcrumps {
@@ -105,6 +119,7 @@
 .advantages {
     margin-bottom: 120px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
     .item {
@@ -125,6 +140,12 @@
             font-size: 16px;
             font-weight: 400;
         }
+    }
+
+    @media (max-width: 985px) {
+        justify-content: center;
+        gap: 100px;
+
     }
 }
 

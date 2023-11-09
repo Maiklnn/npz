@@ -1,22 +1,19 @@
-- var class_slider = 'slider-clients'
-section(class=`${class_slider}`)
+section(class='clients')
     h2(class='title__decor') Наши клиенты
 
-    div(class=`${class_slider}__inner`)
+
+    - var class_slider = 'slider-clients'
+    div(class=`${class_slider} container`)
+        div(class=`${class_slider}__container swiper-container`)
+            .swiper-wrapper
+                mixin item(img, title, descr)
+                     a(class=`slide swiper-slide` href = '#'): img(src=`assets/img/content/slider-logo/${img}`)
+                +item('1.jpg', '1')
+                +item('2.jpg', '2')
+                +item('3.jpg', '3')
+                +item('1.jpg', '4')
+                +item('2.jpg', '5')
+                +item('3.jpg', '5')
 
         button(class='swiper-button-prev')
-
-        div(class=`${class_slider}__swiper swiper-container`)
-
-            .swiper-wrapper
-                mixin item(img)
-                    a(class=`slide swiper-slide` href = '#'): img(src=`assets/img/content/slider-logo/${img}`)
-
-                +item('1.jpg')
-                +item('2.jpg')
-                +item('3.jpg')
-                +item('1.jpg')
-                +item('2.jpg')
-                +item('3.jpg')
-
         button(class='swiper-button-next')

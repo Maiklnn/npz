@@ -6,6 +6,8 @@
 	&__row {
 		display: flex;
 		justify-content: space-between;
+        gap: 5px;
+
 		&-left {
 			flex-grow: 1;
 			max-width: 400px;
@@ -101,8 +103,69 @@
 	}
 
 
+}
+
+@media (max-width: 1100px) {
+    .footer {
+        &__row {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+    }
+}
 
 
+@media (max-width: 600px) {
+    .footer {
+        padding: 64px 0 64px ;
+        &__row {
+            justify-content: start;
+
+            &-left {
+                flex-grow: 1;
+                order: -2;
+                gap: 28px;
+            }
 
 
+            &-right {
+                max-width: 100%;
+                width: 100%;
+                gap: 22px;
+                align-items: start;
+                order: -1;
+                margin-bottom: 55px;
+
+
+                .phone{
+                    font-size: 18px;
+                }
+
+                .mail{
+                    font-size: 18px;
+                }
+
+                .btn{
+                    min-width: 228px;
+                    max-width: 228px;
+                }
+
+                .sohial {
+                    display: none;
+                }
+            }
+
+            nav {
+                font-size: 14px;
+                &:nth-child(2) {
+                    max-width: 183px;
+                }
+                &:nth-child(3) {
+                    max-width: 128px;
+                }
+            }
+
+        }
+    }
 }

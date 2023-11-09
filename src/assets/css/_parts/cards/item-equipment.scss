@@ -1,5 +1,6 @@
 .item-equipment {
 	display: flex;
+    gap: 15px;
 	border: 1px solid #000;
 
 	&__left {
@@ -18,8 +19,36 @@
 
 
 	&__right {
-		min-width: 327px;
+	min-width: 327px;
 	}
+
+    @media(max-width: 600px) {
+
+        &__left {
+            padding: 25px 11px 0 12px;
+
+
+            &-name {
+                margin-bottom: 15px;
+                font-size: 14px;
+            }
+            &-descr {
+                font-size: 12px;
+            }
+        }
+
+
+        &__right {
+            min-width: 140px;
+            max-width: 140px;
+            height: 167px;
+            img {
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+
+    }
 
 
 

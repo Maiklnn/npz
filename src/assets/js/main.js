@@ -86,7 +86,7 @@ class SliderSwiper {
 	}
 
 	sliders() {
-		let sliders = document.querySelectorAll('.slider-clients__swiper');
+		let sliders = document.querySelectorAll('.slider-clients__container');
 		sliders.forEach((item) => {
 			new Swiper(item, {
 				spaceBetween: 20,
@@ -98,11 +98,8 @@ class SliderSwiper {
 					prevEl: item.parentElement.querySelector(`.swiper-button-next`),
 				},
 				breakpoints: {
-					640: {
+					780: {
 						slidesPerView: 2,
-					},
-					768: {
-						slidesPerView: 3,
 					},
 					1024: {
 						slidesPerView: 3,
@@ -124,7 +121,11 @@ class SliderSwiper {
 					prevEl: item.parentElement.querySelector(`.swiper-button-next`),
 				},
 				breakpoints: {
-					640: {
+					320: {
+						slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                    700: {
 						slidesPerView: 2,
 					},
 
